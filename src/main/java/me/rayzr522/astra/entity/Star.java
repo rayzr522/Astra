@@ -1,111 +1,32 @@
 package me.rayzr522.astra.entity;
 
-import java.awt.Image;
+import me.rayzr522.astra.Astra;
+import me.rayzr522.astra.InputManager;
 
-import me.rayzr522.astra.Board;
+import java.awt.*;
 
-public class Star {
+public class Star extends GameObject {
+    private static final Image IMAGE = Astra.loadImage("/textures/star.png");
 
-	private int		value;
-	private double	x;
-	private double	y;
+    private int value;
 
-	private Image	image;
-	private int		width;
-	private int		height;
-	private int		playWidth;
-	private int		playHeight;
-	private int		sidebarWidth;
+    public Star(int value, int gameWidth, int gameHeight, int sidebarWidth) {
+        super(30 + sidebarWidth + Math.random() * (gameWidth - 60), 30 + Math.random() * (gameHeight - 60), 15, 15, IMAGE);
 
-	private boolean	alive;
+        this.value = value;
+    }
 
-	public Star(int value, int width, int height, int gameWidth, int gameHeight, int sidebarWidth) {
+    public int getValue() {
+        return value;
+    }
 
-		image = Board.loadImage("/textures/star.png");
-		this.width = width;
-		this.height = height;
-		this.playWidth = gameWidth - sidebarWidth;
-		this.playHeight = gameHeight;
-		this.sidebarWidth = sidebarWidth;
+    @Override
+    public void input(InputManager input) {
 
-		x = (Math.random() + 0.001) * playWidth;
-		if (x > playWidth - 30 - width) {
+    }
 
-			x = playWidth - 30 - width;
+    @Override
+    public void tick() {
 
-		}
-		if (x < 30) {
-
-			x = 30;
-
-		}
-
-		y = (Math.random() + 0.001) * playHeight;
-		if (y > playHeight - 30 - height) {
-
-			y = playHeight - 30 - height;
-
-		}
-		if (y < 30) {
-
-			y = 30;
-
-		}
-
-		x += sidebarWidth;
-
-		this.value = value;
-
-		alive = true;
-
-	}
-
-	public int getValue() {
-		return value;
-	}
-
-	public int getWidth() {
-
-		return width;
-
-	}
-
-	public int getHeight() {
-
-		return height;
-
-	}
-
-	public double getX() {
-		return x;
-	}
-
-	public double getY() {
-		return y;
-	}
-
-	public void setX(double x) {
-
-		this.x = x;
-
-	}
-
-	public void setY(double y) {
-
-		this.y = y;
-
-	}
-
-	public Image getImage() {
-		return image;
-	}
-
-	public boolean isAlive() {
-		return alive;
-	}
-
-	public void setAlive(boolean alive) {
-		this.alive = alive;
-	}
-
+    }
 }
