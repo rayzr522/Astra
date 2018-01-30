@@ -1,14 +1,16 @@
 package me.rayzr522.astra.entity;
 
 import me.rayzr522.astra.Astra;
-import me.rayzr522.astra.InputManager;
+import me.rayzr522.astra.manager.InputManager;
 import me.rayzr522.astra.sound.Sounds;
+import me.rayzr522.astra.type.GameObject;
+import me.rayzr522.astra.type.Vector2D;
 
 import java.awt.*;
 
 public class Player extends GameObject {
+    private static final Image IMAGE = Astra.loadImage("/textures/player.png");
     private static final double speedMod = 96.0;
-    private static Image IMAGE = Astra.loadImage("/textures/ball2.png");
 
     private final Astra game;
 

@@ -1,4 +1,4 @@
-package me.rayzr522.astra;
+package me.rayzr522.astra.type;
 
 public interface Tickable {
     void tick();

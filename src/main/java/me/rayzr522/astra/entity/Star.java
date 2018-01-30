@@ -1,7 +1,8 @@
 package me.rayzr522.astra.entity;
 
 import me.rayzr522.astra.Astra;
-import me.rayzr522.astra.InputManager;
+import me.rayzr522.astra.manager.InputManager;
+import me.rayzr522.astra.type.GameObject;
 
 import java.awt.*;
 

@@ -1,4 +1,8 @@
-package me.rayzr522.astra;
+package me.rayzr522.astra.manager;
+
+import me.rayzr522.astra.Astra;
+import me.rayzr522.astra.Start;
+import me.rayzr522.astra.type.Tickable;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;

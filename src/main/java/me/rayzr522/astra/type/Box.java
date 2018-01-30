@@ -1,4 +1,4 @@
-package me.rayzr522.astra.entity;
+package me.rayzr522.astra.type;
 
 public class Box {
 
@@ -8,12 +8,10 @@ public class Box {
     private int height;
 
     public Box(double x, double y, int width, int height) {
-
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
-
     }
 
     public double getX() {

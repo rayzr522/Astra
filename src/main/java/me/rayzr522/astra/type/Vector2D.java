@@ -1,4 +1,4 @@
-package me.rayzr522.astra.entity;
+package me.rayzr522.astra.type;
 
 public class Vector2D {
     private double x;

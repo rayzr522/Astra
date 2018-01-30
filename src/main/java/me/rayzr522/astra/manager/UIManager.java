@@ -1,10 +1,12 @@
-package me.rayzr522.astra.ui;
+package me.rayzr522.astra.manager;
 
 import me.rayzr522.astra.Astra;
-import me.rayzr522.astra.InputManager;
 import me.rayzr522.astra.Start;
-import me.rayzr522.astra.Tickable;
+import me.rayzr522.astra.type.Tickable;
 import me.rayzr522.astra.sound.Song;
+import me.rayzr522.astra.ui.Button;
+import me.rayzr522.astra.ui.ButtonLAF;
+import me.rayzr522.astra.ui.ButtonStyle;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -17,7 +19,7 @@ import java.util.List;
 
 public class UIManager implements Tickable {
     private final Astra game;
-    private List<Button> buttons = new ArrayList<>();
+    private List<me.rayzr522.astra.ui.Button> buttons = new ArrayList<>();
 
     public UIManager(Astra game) {
         this.game = game;
@@ -41,9 +43,9 @@ public class UIManager implements Tickable {
         int buttonWidth = (int) Math.floor(game.getSidebarWidth() * 0.8);
         int buttonX = (game.getSidebarWidth() - buttonWidth) / 2;
 
-        buttons.add(new Button("Save and Quit", laf, buttonX, 180, buttonWidth, 40, quit));
-        buttons.add(new Button("Reset High Scores", laf, buttonX, 240, buttonWidth, 40, reset));
-        buttons.add(new Button("Change Music", laf, buttonX, 300, buttonWidth, 40, music));
+        buttons.add(new me.rayzr522.astra.ui.Button("Save and Quit", laf, buttonX, 180, buttonWidth, 40, quit));
+        buttons.add(new me.rayzr522.astra.ui.Button("Reset High Scores", laf, buttonX, 240, buttonWidth, 40, reset));
+        buttons.add(new me.rayzr522.astra.ui.Button("Change Music", laf, buttonX, 300, buttonWidth, 40, music));
     }
 
     public void render(Graphics2D g) {

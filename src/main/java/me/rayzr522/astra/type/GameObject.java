@@ -1,7 +1,7 @@
-package me.rayzr522.astra.entity;
+package me.rayzr522.astra.type;
 
-import me.rayzr522.astra.InputManager;
-import me.rayzr522.astra.Tickable;
+import me.rayzr522.astra.manager.InputManager;
+import me.rayzr522.astra.manager.TaskManager;
 
 import java.awt.*;
 
@@ -72,11 +72,28 @@ public abstract class GameObject implements Tickable {
         this.velocity = velocity;
     }
 
+    public void destroy() {
+        setAlive(false);
+    }
+
+    public void destroy(long millis) {
+        TaskManager.INSTANCE.execute(() -> {
+            try {
+                Thread.sleep(millis);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            destroy();
+        });
+    }
+
     public void input(InputManager input) {
     }
 
     public void render(Graphics2D g) {
-        g.drawImage(image, (int) Math.floor(x - width / 2.0), (int) Math.floor(y - height / 2.0), width, height, null);
+        if (image != null) {
+            g.drawImage(image, (int) Math.floor(x - width / 2.0), (int) Math.floor(y - height / 2.0), width, height, null);
+        }
     }
 
     public void physics() {
