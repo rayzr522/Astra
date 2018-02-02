@@ -11,7 +11,7 @@ public abstract class GameObject implements Tickable {
 
     private double x;
     private double y;
-    private Image image;
+    private final Image image;
 
     private boolean alive = true;
     private Vector2D velocity = new Vector2D(0, 0);

@@ -2,10 +2,10 @@ package me.rayzr522.astra.type;
 
 public class Box {
 
-    private double x;
-    private double y;
-    private int width;
-    private int height;
+    private final double x;
+    private final double y;
+    private final int width;
+    private final int height;
 
     public Box(double x, double y, int width, int height) {
         this.x = x;
@@ -18,32 +18,16 @@ public class Box {
         return x;
     }
 
-    public void setX(double x) {
-        this.x = x;
-    }
-
     public double getY() {
         return y;
-    }
-
-    public void setY(double y) {
-        this.y = y;
     }
 
     public int getWidth() {
         return width;
     }
 
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
     public int getHeight() {
         return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
     }
 
     public boolean checkBounds(Box box) {
@@ -60,34 +44,31 @@ public class Box {
         double otherWidth = box.getWidth();
         double otherHeight = box.getHeight();
 
-        double otherLeft = otherX;
-        double otherTop = otherY;
         double otherRight = otherX + otherWidth;
         double otherBottom = otherY + otherHeight;
 
-        if (thisLeft >= otherLeft && thisLeft <= otherRight && thisTop >= otherTop && thisTop <= otherBottom)
+        if (thisLeft >= otherX && thisLeft <= otherRight && thisTop >= otherY && thisTop <= otherBottom)
             collide = true;
-        if (thisRight >= otherLeft && thisRight <= otherRight && thisTop >= otherTop && thisTop <= otherBottom)
+        if (thisRight >= otherX && thisRight <= otherRight && thisTop >= otherY && thisTop <= otherBottom)
             collide = true;
-        if (thisRight >= otherLeft && thisRight <= otherRight && thisBottom >= otherTop && thisBottom <= otherBottom)
+        if (thisRight >= otherX && thisRight <= otherRight && thisBottom >= otherY && thisBottom <= otherBottom)
             collide = true;
-        if (thisLeft >= otherLeft && thisLeft <= otherRight && thisBottom >= otherTop && thisBottom <= otherBottom)
-            collide = true;
-
-        if (thisLeft <= otherLeft && thisRight >= otherRight && thisTop <= otherTop && thisBottom >= otherBottom)
+        if (thisLeft >= otherX && thisLeft <= otherRight && thisBottom >= otherY && thisBottom <= otherBottom)
             collide = true;
 
-        if (thisLeft >= otherLeft && thisLeft <= otherRight && thisRight >= otherRight && thisTop <= otherTop && thisBottom >= otherBottom)
+        if (thisLeft <= otherX && thisRight >= otherRight && thisTop <= otherY && thisBottom >= otherBottom)
             collide = true;
-        if (thisLeft <= otherLeft && thisRight >= otherRight && thisTop >= otherTop && thisTop <= otherBottom && thisBottom >= otherBottom)
+
+        if (thisLeft >= otherX && thisLeft <= otherRight && thisRight >= otherRight && thisTop <= otherY && thisBottom >= otherBottom)
             collide = true;
-        if (thisLeft <= otherLeft && thisRight <= otherRight && thisRight >= otherLeft && thisTop <= otherTop && thisBottom >= otherBottom)
+        if (thisLeft <= otherX && thisRight >= otherRight && thisTop >= otherY && thisTop <= otherBottom && thisBottom >= otherBottom)
             collide = true;
-        if (thisLeft <= otherLeft && thisRight >= otherRight && thisTop <= otherTop && thisBottom <= otherBottom && thisBottom >= otherTop)
+        if (thisLeft <= otherX && thisRight <= otherRight && thisRight >= otherX && thisTop <= otherY && thisBottom >= otherBottom)
+            collide = true;
+        if (thisLeft <= otherX && thisRight >= otherRight && thisTop <= otherY && thisBottom <= otherBottom && thisBottom >= otherY)
             collide = true;
 
         return collide;
-
     }
 
 }

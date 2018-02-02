@@ -15,7 +15,7 @@ public class InputManager implements Tickable {
     private int mouseX = -1;
     private int mouseY = -1;
 
-    private boolean[] keyDown = createEmptyBoolArray();
+    private final boolean[] keyDown = createEmptyBoolArray();
     private boolean[] keyPressed = createEmptyBoolArray();
 
     public InputManager(Astra game) {

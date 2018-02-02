@@ -6,15 +6,15 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class Button {
-    private String name;
-    private ButtonLAF laf;
-    private int x;
-    private int y;
-    private int width;
-    private int height;
-    private ActionListener listener;
+    private final String name;
+    private final ButtonLAF laf;
+    private final int x;
+    private final int y;
+    private final int width;
+    private final int height;
+    private final ActionListener listener;
 
-    private FontMetrics fontMetrics;
+    private final FontMetrics fontMetrics;
 
     public Button(String name, ButtonLAF laf, int x, int y, int width, int height, ActionListener listener) {
         this.name = name;
@@ -49,12 +49,10 @@ public class Button {
     }
 
     public boolean checkBounds(int mouseX, int mouseY) {
-        int left = x;
-        int top = y;
         int right = x + width;
         int bottom = y + height;
 
-        return mouseX > left && mouseX < right && mouseY > top && mouseY < bottom;
+        return mouseX > x && mouseX < right && mouseY > y && mouseY < bottom;
     }
 
     public void execute() {

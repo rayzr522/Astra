@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 public class ScoreManager {
     private List<Score> scores = new ArrayList<>();
-    private Path saveFile;
+    private final Path saveFile;
 
     public ScoreManager() {
         Path dataDirectory = new File(System.getProperty("user.home")).toPath().resolve(".astra");

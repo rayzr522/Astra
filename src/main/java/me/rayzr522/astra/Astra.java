@@ -24,15 +24,15 @@ public class Astra extends JPanel implements Runnable {
 
     // Display
     private final Font uiFont;
-    private final int width;
-    private final int height;
+    private final int width = Start.WIDTH;
+    private final int height = Start.HEIGHT;
     private final int sidebarWidth;
     private final int textSize;
 
     // Managers
-    private ScoreManager scoreManager;
-    private InputManager inputManager;
-    private UIManager uiManager;
+    private final ScoreManager scoreManager;
+    private final InputManager inputManager;
+    private final UIManager uiManager;
     private List<GameObject> gameObjects;
 
     // Resources
@@ -60,9 +60,7 @@ public class Astra extends JPanel implements Runnable {
     private int numStars;
     private int score;
 
-    Astra(int width, int height) {
-        this.width = width;
-        this.height = height;
+    Astra() {
         this.sidebarWidth = (int) Math.floor(width / 4);
         this.textSize = (int) Math.floor(height * 0.026041667);
 

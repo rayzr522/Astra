@@ -5,7 +5,7 @@ public enum Song {
     LAZY(Sounds.lazy),
     FUNK(Sounds.funk);
 
-    private Sound song;
+    private final Sound song;
 
     Song(Sound song) {
         this.song = song;

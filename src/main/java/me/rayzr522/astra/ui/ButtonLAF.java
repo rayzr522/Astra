@@ -3,12 +3,12 @@ package me.rayzr522.astra.ui;
 import java.awt.*;
 
 public class ButtonLAF {
-    private Color back;
-    private Color text;
-    private Color borderColor;
-    private ButtonStyle buttonStyle;
-    private int borderWidth;
-    private Font font;
+    private final Color back;
+    private final Color text;
+    private final Color borderColor;
+    private final ButtonStyle buttonStyle;
+    private final int borderWidth;
+    private final Font font;
 
     public ButtonLAF(Color back, Color text, Color borderColor, ButtonStyle buttonStyle, int borderWidth, Font font) {
         this.back = back;

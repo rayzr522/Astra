@@ -2,8 +2,8 @@ package me.rayzr522.astra.manager;
 
 import me.rayzr522.astra.Astra;
 import me.rayzr522.astra.Start;
-import me.rayzr522.astra.type.Tickable;
 import me.rayzr522.astra.sound.Song;
+import me.rayzr522.astra.type.Tickable;
 import me.rayzr522.astra.ui.Button;
 import me.rayzr522.astra.ui.ButtonLAF;
 import me.rayzr522.astra.ui.ButtonStyle;
@@ -19,7 +19,7 @@ import java.util.List;
 
 public class UIManager implements Tickable {
     private final Astra game;
-    private List<me.rayzr522.astra.ui.Button> buttons = new ArrayList<>();
+    private final List<Button> buttons = new ArrayList<>();
 
     public UIManager(Astra game) {
         this.game = game;
